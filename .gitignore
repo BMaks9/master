@@ -1,2 +1,6 @@
 .obsidian
 .DS_Store
+
+# Generated site (built in CI, deployed to GitHub Pages)
+public/
+__pycache__/
