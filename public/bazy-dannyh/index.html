@@ -34,7 +34,7 @@
 <main class="content">
 <article class="note"><div class="note-head"><span class="note-emoji">🗄️</span><h1>Базы данных</h1></div><p>Типы задач:<br>
 1. Простоя выборка из 1 таблицы<br>
-<a class="imglink" href="image/Pasted image 20260705194918.png" data-lightbox><img class="note-img" src="image/Pasted image 20260705194918.png" alt="Pasted image 20260705194918.png" loading="lazy"></a></p>
+<a class="imglink" href="image/Pasted%20image%2020260705194918.png" data-lightbox><img class="note-img" src="image/Pasted%20image%2020260705194918.png" alt="Pasted image 20260705194918.png" loading="lazy"></a></p>
 <p>Решение:</p>
 <pre><code>SELECT model, ram, screen FROM Laptop 
 WHERE price &gt; 1000 or price = 500 
@@ -45,7 +45,7 @@ ORDER BY ram;
 $$</p>
 <ol start="2">
 <li>Выборка по двум таблицам<br>
-<a class="imglink" href="image/Pasted image 20260705195150.png" data-lightbox><img class="note-img" src="image/Pasted image 20260705195150.png" alt="Pasted image 20260705195150.png" loading="lazy" style="width:682px"></a></li>
+<a class="imglink" href="image/Pasted%20image%2020260705195150.png" data-lightbox><img class="note-img" src="image/Pasted%20image%2020260705195150.png" alt="Pasted image 20260705195150.png" loading="lazy" style="width:682px"></a></li>
 </ol>
 <p>Решение:</p>
 <pre><code>SELECT DISTINCT Product.maker FROM Product
@@ -57,7 +57,7 @@ ORDER BY Product.maker;
 \tau_{maker}(\pi_{maker}(\sigma_{speed>=450}(Product\bowtie_{Product.model=PC.model}PC)))
 $$<br>
 3. Найти максимальную цену<br>
-<a class="imglink" href="image/Pasted image 20260705195336.png" data-lightbox><img class="note-img" src="image/Pasted image 20260705195336.png" alt="Pasted image 20260705195336.png" loading="lazy"></a></p>
+<a class="imglink" href="image/Pasted%20image%2020260705195336.png" data-lightbox><img class="note-img" src="image/Pasted%20image%2020260705195336.png" alt="Pasted image 20260705195336.png" loading="lazy"></a></p>
 <p>Решение:</p>
 <pre><code>SELECT model, price FROM Printer
 WHERE price = (SELECT MAX(price) FROM Printer)
@@ -67,7 +67,7 @@ ORDER BY price;
 \tau_{price}(\pi_{model, price}(\sigma_{price = max\_price}(Printer \times \gamma_{max(price) \rightarrow max\_price}(Printer))))
 $$<br>
 4. Найти среднее<br>
-<a class="imglink" href="image/Pasted image 20260705195453.png" data-lightbox><img class="note-img" src="image/Pasted image 20260705195453.png" alt="Pasted image 20260705195453.png" loading="lazy"></a></p>
+<a class="imglink" href="image/Pasted%20image%2020260705195453.png" data-lightbox><img class="note-img" src="image/Pasted%20image%2020260705195453.png" alt="Pasted image 20260705195453.png" loading="lazy"></a></p>
 <p>Решение:</p>
 <pre><code>SELECT AVG(PC.speed) AS avg_speed FROM PC
 JOIN Product ON PC.model = Product.model
@@ -77,7 +77,7 @@ WHERE Product.maker = 'A';
 \gamma_{avg(speed) \rightarrow avg\_speed}(\sigma_{maker = 'A'}(PC \bowtie_{PC.model = Product.model} Product))
 $$<br>
 5. С подзапросом + JOIN<br>
-<a class="imglink" href="image/Pasted image 20260705195624.png" data-lightbox><img class="note-img" src="image/Pasted image 20260705195624.png" alt="Pasted image 20260705195624.png" loading="lazy"></a></p>
+<a class="imglink" href="image/Pasted%20image%2020260705195624.png" data-lightbox><img class="note-img" src="image/Pasted%20image%2020260705195624.png" alt="Pasted image 20260705195624.png" loading="lazy"></a></p>
 <p>Решение:</p>
 <pre><code>SELECT p.type, l.model, l.speed FROM Laptop AS l
 JOIN Product AS p ON l.model = p.model
@@ -88,7 +88,7 @@ $$
 \pi_{type, model, speed}(\sigma_{speed < min\_speed}((Laptop \bowtie_{Laptop.model = Product.model} Product) \times \gamma_{min(speed) \rightarrow min\_speed}(PC)))
 $$<br>
 6. JOIN + агрегатор<br>
-<a class="imglink" href="image/Pasted image 20260705200006.png" data-lightbox><img class="note-img" src="image/Pasted image 20260705200006.png" alt="Pasted image 20260705200006.png" loading="lazy"></a></p>
+<a class="imglink" href="image/Pasted%20image%2020260705200006.png" data-lightbox><img class="note-img" src="image/Pasted%20image%2020260705200006.png" alt="Pasted image 20260705200006.png" loading="lazy"></a></p>
 <p>Решение:</p>
 <pre><code>SELECT p.maker, AVG(l.screen) as avg_screen FROM Product AS p
 JOIN Laptop AS l ON p.model = l.model
@@ -114,7 +114,7 @@ $$
 \end{array}
 $$<br>
 Пример:<br>
-<a class="imglink" href="image/Pasted image 20260705193925.png" data-lightbox><img class="note-img" src="image/Pasted image 20260705193925.png" alt="Pasted image 20260705193925.png" loading="lazy" style="width:491px"></a></p></article>
+<a class="imglink" href="image/Pasted%20image%2020260705193925.png" data-lightbox><img class="note-img" src="image/Pasted%20image%2020260705193925.png" alt="Pasted image 20260705193925.png" loading="lazy" style="width:491px"></a></p></article>
 </main>
 <footer class="page-foot">
   <p>Собрано из Obsidian-заметок · обновляется автоматически при <code>git push</code></p>

@@ -17,6 +17,7 @@ import json
 import os
 import re
 import shutil
+from urllib.parse import quote
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -214,7 +215,7 @@ def convert(text: str, page: Note, note_by_key, image_by_name) -> tuple[str, str
             site_rel = image_by_name.get(name)
             if not site_rel:
                 return f'<span class="missing">🖼 {html.escape(name)}</span>'
-            url = relurl(page_dir, site_rel)
+            url = quote(relurl(page_dir, site_rel))
             style = ""
             if opt.isdigit():
                 style = f' style="width:{opt}px"'
