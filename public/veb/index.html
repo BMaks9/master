@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ВЕБ · Подготовка в магистратуру ИУ5</title>
+<meta name="description" content="Конспекты и разборы задач для вступительного экзамена">
+<script>window.SITE_ROOT="../";(function(){try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link id="hl-light" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css">
+<link id="hl-dark" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css" disabled>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="../assets/app.js"></script>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="../index.html"><span class="brand-mark">ИУ5</span>
+    <span class="brand-text">Подготовка<br>к магистратуре</span></a>
+  <button class="search-open" id="search-open">🔎 Поиск<span class="kbd">/</span></button>
+  <nav class="nav"><details class="nav-subject"><summary><span class="nav-emoji">🧮</span><span class="nav-name">Алгебра логики</span></summary><ul><li><a class="" href="../algebra-logiki/index.html">Обзор</a></li><li><a class="" href="../algebra-logiki/1-dana-sdnf-nado-minimizirovat-i-predstavit-v-bazise-sheffera.html">1. Дана СДНФ, надо минимизировать и представить в базисе Шеффера</a></li><li><a class="" href="../algebra-logiki/2-dana-sknf-nado-minimizirovat-i-predstavit-v-bazise-pirsa.html">2. Дана СКНФ, надо минимизировать и представить в базисе Пирса</a></li><li><a class="" href="../algebra-logiki/3-dana-sdnf-nado-minimizirovat-i-predstavit-v-bazise-pirsa.html">3. Дана СДНФ, надо минимизировать и представить в базисе Пирса</a></li></ul></details><details class="nav-subject"><summary><span class="nav-emoji">🗄️</span><span class="nav-name">Базы данных</span></summary><ul><li><a class="" href="../bazy-dannyh/index.html">Обзор</a></li></ul></details><details class="nav-subject"><summary><span class="nav-emoji">🌐</span><span class="nav-name">Сети</span></summary><ul><li><a class="" href="../seti/index.html">Обзор</a></li><li><a class="" href="../seti/1-opredelit-nahodyatsya-li-v-odnoy-podseti.html">1. Определить находятся ли в одной подсети</a></li><li><a class="" href="../seti/2-opredelit-ip.html">2. Определить ip</a></li><li><a class="" href="../seti/4-naznachit-ip-adresa.html">4. Назначить ip адреса</a></li><li><a class="" href="../seti/5-kol-vo-hostov.html">5. Кол-во хостов</a></li></ul></details><details class="nav-subject" open><summary><span class="nav-emoji">🎨</span><span class="nav-name">ВЕБ</span></summary><ul><li><a class="active" href="index.html">Обзор</a></li></ul></details><details class="nav-subject"><summary><span class="nav-emoji">🤖</span><span class="nav-name">Машинное обучение</span></summary><ul><li><a class="" href="../mashinnoe-obuchenie/index.html">Обзор</a></li><li><a class="" href="../mashinnoe-obuchenie/1-matrica-oshibok-binarnoy-klassifikacii-one-vs-all-po-1-klassu-f1-score.html">1. Матрица ошибок бинарной классификации + one-vs-all по 1 классу+ f1-score</a></li></ul></details></nav>
+  <div class="sidebar-foot"><a href="../index.html">← На главную</a></div>
+</aside>
+<div class="main">
+<header class="topbar">
+  <button class="icon-btn menu-btn" id="menu-btn" aria-label="Меню">☰</button>
+  <nav class="crumbs"><a href="../index.html">Главная</a><span class="sep">/</span><span>ВЕБ</span></nav>
+  <div class="spacer"></div>
+  <button class="icon-btn" id="theme-toggle" aria-label="Тема" title="Сменить тему"><span class="i-sun">☀️</span><span class="i-moon">🌙</span></button>
+</header>
+<main class="content">
+<article class="note"><div class="note-head"><span class="note-emoji">🎨</span><h1>ВЕБ</h1></div><p>Типы задач:<br>
+1. Назначить цвет<br>
+<a class="imglink" href="image/Pasted image 20260713225307.png" data-lightbox><img class="note-img" src="image/Pasted image 20260713225307.png" alt="Pasted image 20260713225307.png" loading="lazy"></a></p>
+<p>Ответ:</p>
+<pre><code>Можно так:
+DIV#section1 DIV.class1 DIV {
+    color: green;
+}
+
+А можно вот так:
+DIV#section1 &gt; DIV.class1 &gt; DIV {
+    color: green;
+}
+
+И так тоже:
+#section1 &gt; .class1 &gt; DIV {
+    color: green;
+}
+
+А еще так:
+#section1 .class1 DIV {
+    color: green;
+}
+
+И даже так:
+*#section1 &gt; *.class1 &gt; DIV {
+    color: green;
+}
+*#section1 *.class1 DIV {
+    color: green;
+}
+</code></pre>
+<ol start="2">
+<li>Тоже выбрать цвет, но чуть-чуть по другому:<br>
+<a class="imglink" href="image/Pasted image 20260713230447.png" data-lightbox><img class="note-img" src="image/Pasted image 20260713230447.png" alt="Pasted image 20260713230447.png" loading="lazy"></a></li>
+</ol>
+<p>Ответ:</p>
+<pre><code>DIV#section1 &gt; DIV.class1 &gt; DIV.class2 &gt; DIV {
+    color: green;
+}
+#section1 .class1 .class2 &gt; DIV {
+    color: green;
+}
+*#section1 &gt; *.class1 &gt; *.class2 &gt; DIV {
+    color: green;
+}
+</code></pre>
+<ol start="3">
+<li>Два цвета<br>
+<a class="imglink" href="image/Pasted image 20260713231344.png" data-lightbox><img class="note-img" src="image/Pasted image 20260713231344.png" alt="Pasted image 20260713231344.png" loading="lazy"></a></li>
+</ol>
+<p>Ответ:</p>
+<pre><code>Вот так пойдет:
+#section1 &gt; .class1 &gt; H1.main {
+    color: green;
+}
+#section1 &gt; .class1 &gt; P.main {
+    color: blue;
+}
+
+А можно и так:
+DIV#section1 DIV.class1 H1.main{
+    color: green;
+}
+DIV#section1 DIV.class1 P.main{
+    color: blue;
+}
+</code></pre>
+<ol start="4">
+<li>Хитрый<br>
+<a class="imglink" href="image/Pasted image 20260713232024.png" data-lightbox><img class="note-img" src="image/Pasted image 20260713232024.png" alt="Pasted image 20260713232024.png" loading="lazy"></a></li>
+</ol>
+<p>Ответ:</p>
+<pre><code>#section1 &gt; .class1 &gt; .class2 &gt; H1.main {
+    color: blue;
+}
+
+#section1 &gt; .class1 &gt; .class2 &gt; P.main {
+    color: red;
+}
+
+Можно указать типы элементов:
+SPAN#section1 &gt; SPAN.class1 &gt; SPAN.class2 &gt; H1.main {
+    color: blue;
+}
+
+SPAN#section1 &gt; SPAN.class1 &gt; SPAN.class2 &gt; P.main {
+    color: red;
+}
+</code></pre>
+<ol start="5">
+<li>Угадать цвет:<br>
+<a class="imglink" href="image/Pasted image 20260713233155.png" data-lightbox><img class="note-img" src="image/Pasted image 20260713233155.png" alt="Pasted image 20260713233155.png" loading="lazy"></a></li>
+</ol>
+<p>Ответ:<br>
+При media = "screen", текст будет отображаться на экране, соответственно подключится style.css.<br>
+Тогда будем иметь следующие стили для P:</p>
+<pre><code>P.P_CLASS {color: blue;}
+P {color: brown;}
+P {color:red;}
+P {color: green;}
+
+Соответственно P.P_CLASS {color: blue;} - более спецефичный, так как имеет один класс и один элемент, а все остальные только один элемент.
+
+В итоге будет СИНИЙ
+</code></pre>
+<p>При media = "print", стиль предназначен только для печати, style.css не подключится, будут стили:</p>
+<pre><code>P {color:red;}
+P {color: green;}
+
+Применится тот, который идет последним, будет ЗЕЛЕНЫЙ
+</code></pre>
+<ol start="6">
+<li>На закрепление:<br>
+<a class="imglink" href="image/Pasted image 20260713235009.png" data-lightbox><img class="note-img" src="image/Pasted image 20260713235009.png" alt="Pasted image 20260713235009.png" loading="lazy"></a></li>
+</ol>
+<p>Ответ:</p>
+<pre><code>Когда media=&quot;screen&quot;, применится style2.css
+Имеем:
+P.P_CLASS {color: blue;}
+P {color: green;}
+P.P_CLASS {color: red;}
+
+Одинаковая спецефичность у P.P_CLASS {color: blue;} и P.P_CLASS {color: red;}, но P.P_CLASS {color: red;} идет позже, он и применится, будт КРАСНЫЙ
+
+Когда media=&quot;print&quot;, style2.css не применится 
+Имеем:
+P.P_CLASS {color: blue;}
+P {color: green;}
+
+Будет СИНИЙ, так как P.P_CLASS {color: blue;} более спецефичный
+</code></pre></article>
+</main>
+<footer class="page-foot">
+  <p>Собрано из Obsidian-заметок · обновляется автоматически при <code>git push</code></p>
+</footer>
+</div>
+</div>
+<div class="search-modal" id="search-modal" hidden>
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="Искать по конспектам…" autocomplete="off">
+    <ul id="search-results"></ul>
+    <div class="search-hint">Enter — перейти · Esc — закрыть</div>
+  </div>
+</div>
+</body></html>

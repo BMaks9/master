@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1. Определить находятся ли в одной подсети · Подготовка в магистратуру ИУ5</title>
+<meta name="description" content="Конспекты и разборы задач для вступительного экзамена">
+<script>window.SITE_ROOT="../";(function(){try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link id="hl-light" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css">
+<link id="hl-dark" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css" disabled>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="../assets/app.js"></script>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="../index.html"><span class="brand-mark">ИУ5</span>
+    <span class="brand-text">Подготовка<br>к магистратуре</span></a>
+  <button class="search-open" id="search-open">🔎 Поиск<span class="kbd">/</span></button>
+  <nav class="nav"><details class="nav-subject"><summary><span class="nav-emoji">🧮</span><span class="nav-name">Алгебра логики</span></summary><ul><li><a class="" href="../algebra-logiki/index.html">Обзор</a></li><li><a class="" href="../algebra-logiki/1-dana-sdnf-nado-minimizirovat-i-predstavit-v-bazise-sheffera.html">1. Дана СДНФ, надо минимизировать и представить в базисе Шеффера</a></li><li><a class="" href="../algebra-logiki/2-dana-sknf-nado-minimizirovat-i-predstavit-v-bazise-pirsa.html">2. Дана СКНФ, надо минимизировать и представить в базисе Пирса</a></li><li><a class="" href="../algebra-logiki/3-dana-sdnf-nado-minimizirovat-i-predstavit-v-bazise-pirsa.html">3. Дана СДНФ, надо минимизировать и представить в базисе Пирса</a></li></ul></details><details class="nav-subject"><summary><span class="nav-emoji">🗄️</span><span class="nav-name">Базы данных</span></summary><ul><li><a class="" href="../bazy-dannyh/index.html">Обзор</a></li></ul></details><details class="nav-subject" open><summary><span class="nav-emoji">🌐</span><span class="nav-name">Сети</span></summary><ul><li><a class="" href="index.html">Обзор</a></li><li><a class="active" href="1-opredelit-nahodyatsya-li-v-odnoy-podseti.html">1. Определить находятся ли в одной подсети</a></li><li><a class="" href="2-opredelit-ip.html">2. Определить ip</a></li><li><a class="" href="4-naznachit-ip-adresa.html">4. Назначить ip адреса</a></li><li><a class="" href="5-kol-vo-hostov.html">5. Кол-во хостов</a></li></ul></details><details class="nav-subject"><summary><span class="nav-emoji">🎨</span><span class="nav-name">ВЕБ</span></summary><ul><li><a class="" href="../veb/index.html">Обзор</a></li></ul></details><details class="nav-subject"><summary><span class="nav-emoji">🤖</span><span class="nav-name">Машинное обучение</span></summary><ul><li><a class="" href="../mashinnoe-obuchenie/index.html">Обзор</a></li><li><a class="" href="../mashinnoe-obuchenie/1-matrica-oshibok-binarnoy-klassifikacii-one-vs-all-po-1-klassu-f1-score.html">1. Матрица ошибок бинарной классификации + one-vs-all по 1 классу+ f1-score</a></li></ul></details></nav>
+  <div class="sidebar-foot"><a href="../index.html">← На главную</a></div>
+</aside>
+<div class="main">
+<header class="topbar">
+  <button class="icon-btn menu-btn" id="menu-btn" aria-label="Меню">☰</button>
+  <nav class="crumbs"><a href="../index.html">Главная</a><span class="sep">/</span><a href="index.html">Сети</a><span class="sep">/</span><span>1. Определить находятся ли в одной подсети</span></nav>
+  <div class="spacer"></div>
+  <button class="icon-btn" id="theme-toggle" aria-label="Тема" title="Сменить тему"><span class="i-sun">☀️</span><span class="i-moon">🌙</span></button>
+</header>
+<main class="content">
+<article class="note"><div class="note-head"><span class="note-emoji">🌐</span><h1>1. Определить находятся ли в одной подсети</h1></div><p><a class="imglink" href="image/telegram-cloud-photo-size-2-5361808452340097435-y.jpg" data-lightbox><img class="note-img" src="image/telegram-cloud-photo-size-2-5361808452340097435-y.jpg" alt="telegram-cloud-photo-size-2-5361808452340097435-y.jpg" loading="lazy"></a><a class="imglink" href="image/telegram-cloud-photo-size-2-5361808452340097442-y.jpg" data-lightbox><img class="note-img" src="image/telegram-cloud-photo-size-2-5361808452340097442-y.jpg" alt="telegram-cloud-photo-size-2-5361808452340097442-y.jpg" loading="lazy"></a></p></article>
+</main>
+<footer class="page-foot">
+  <p>Собрано из Obsidian-заметок · обновляется автоматически при <code>git push</code></p>
+</footer>
+</div>
+</div>
+<div class="search-modal" id="search-modal" hidden>
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="Искать по конспектам…" autocomplete="off">
+    <ul id="search-results"></ul>
+    <div class="search-hint">Enter — перейти · Esc — закрыть</div>
+  </div>
+</div>
+</body></html>
