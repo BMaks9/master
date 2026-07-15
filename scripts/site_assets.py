@@ -133,7 +133,7 @@ pre code{background:none;padding:0}
 .card:hover{transform:translateY(-3px);border-color:var(--accent);text-decoration:none}
 .card-emoji{font-size:32px;width:56px;height:56px;display:grid;place-items:center;
   background:var(--accent-soft);border-radius:14px;flex:0 0 auto}
-.card-body{flex:1;min-width:0}
+.card-body{flex:1;min-width:0;padding-right:58px}
 .card h3{margin:0 0 4px;font-size:17px;color:var(--text)}
 .card-meta{margin:0;font-size:13px;color:var(--muted)}
 .badge{position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;
