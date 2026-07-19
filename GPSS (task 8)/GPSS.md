@@ -63,7 +63,115 @@ beg  advance 150, 50
 
 Ответ:
 ```
-generate 0, 0, 0, 10
-advance T
-assign 1, (duniform(1, 1, 10))
+beg	generate 0, 0, 0, 10
+	advance T
+	assign 1, (duniform(1, 1, 10))
+	gate ls 1
+	seize evm
+	advance p1
+	release evm
+	transfer , beg
+
+met generate 0, 0, 0, 1
+	logic s 1
+	advance tr
+	logic r 1
+	advance td
+	transfer , met
 ```
+
+без сложности
+![[Pasted image 20260719184039.png]]
+Ответ:
+```
+	generate 0, 0, 0, 5
+beg advance T
+	gate ls 1
+	seize server
+	advance (exp(1, l))
+	release server
+	transfer  ,server
+
+	generate 0, 0, 0, 1	
+met logic s 1
+	advance tr
+	logic r 1
+	advance td
+	transfer  ,met
+```
+
+4. Переходы в зависимости от состояний \ вероятностей
+![[Pasted image 20260719185551.png]]
+Ответ:
+```
+	generate (exp(1, l))
+	gate ls 1, mevm2
+	transfer both  , , mevm2
+	seize evm1
+	advance 6, 3
+	release evm1
+	terminate
+
+mevm2 seize evm2
+	  advance 15, 3
+	  release evm2
+	  terminate
+	
+	generate 0, 0, 0, 1
+beg logic s 1
+	advance tr
+	logic r 1
+	advance td
+	transfer ,beg 
+
+```
+
+![[Pasted image 20260719190750.png]]
+Ответ:
+```
+	generate (exp(1, l))
+	gate ls 1, mevm2
+	transfer 0,7 mevm2
+	seize evm1
+	advance 15, 5
+	relese evm1
+	terminate
+
+mevm2 seize evm2
+	  advance 8, 5
+	  relese evm2
+	  terminate
+
+	generate 0, 0, 0, 1
+beg logic s 1
+	advance tr
+	logic r 1
+	advance td
+	transfer ,beg
+	
+```
+
+5. Картинки
+![[Pasted image 20260719193053.png]]
+
+Ответ:
+```
+
+```
+Билеты:
+1 - ✅
+2 - ✅
+3 - ✅
+4 - ✅
+5 - ✅
+6 - ✅
+7 - ✅
+8 -
+9 -
+10 -
+11 - 
+12 -
+13 - 
+14 - 
+15 - ✅
+17 - ✅
