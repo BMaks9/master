@@ -131,7 +131,7 @@ beg logic s 1
 ```
 	generate (exp(1, l))
 	gate ls 1, mevm2
-	transfer 0,7 mevm2
+	transfer 0,3 mevm2
 	seize evm1
 	advance 15, 5
 	relese evm1
@@ -153,25 +153,228 @@ beg logic s 1
 
 5. Картинки
 ![[Pasted image 20260719193053.png]]
+Важно расставить правильно флаги, их будет два в момент передачи на каналы, а также в момент когда пакеты уже в 1 канале.
 
 Ответ:
 ```
+	generate (exp(1, L1))
+	transfer  ,uz1 ; слияние потоков
+	generate (exp(1, L2)) 
+	
+uz1 seize h1
+	advance t1
+	release h1
+	gate ls 1, mc2
+	transfer 1-PC, ,mc1
+
+mc2 seize c2
+	advance TC2
+	release c2
+	seize h3
+	advance TH3
+	release h3
+	terminate 
+
+mc1 seize c1
+	advance TC1
+	release c1
+	gate ls 1
+	seize h2
+	advance TH2
+	release h2
+	terminate
+	
+	
+	generate 0, 0, 0, 1
+beg logic s 1
+	advance TR
+	logic r 1
+	advance TD
+	transfer  ,beg	
+```
+
+![[Pasted image 20260720221621.png]]
+
+Ответ:
+```
+h2 storage 3
+	
+	generate (exp(1, l1))
+	seize h1
+	advance t1
+	release h1
+	seize c1
+	advance tc1
+	release c1
+	transfer  ,uz2
+	
+	generate (exp(1, l2))
+	seize h1
+	advance t1
+	release h1
+	seize c2
+	advance tc2
+	release c2
+	
+uz2 enter h2
+	advance th2
+	leave h2
+	terminate
+	
+```
+
+![[Pasted image 20260720224014.png]]
+Статистику надо собрать!
+
+Ответ:
+```
+h2 storage 5
+	generate (exp(1, l1))
+	transfer ,uz1
+	generate (exp(1, l2))
+
+uz1 queue preb ; начало сбора статы
+	seize h1
+	advance t1
+	release h1
+	transfer 1-pc, mc1
+
+mc2 seize c2
+	advance tc2
+	release c2
+	transfer ,uz2
+
+mc1 seize c1
+	advance tc1
+	release c1
+
+uz2 enter h2
+	advance th2
+	leave h2
+	depart preb ; конец сбора статы
+	terminate
 
 ```
-Билеты:
-1 - ✅
-2 - ✅
-3 - ✅
-4 - ✅
-5 - ✅
-6 - ✅
-7 - ✅
-8 -
-9 -
-10 -
-11 - 
-12 -
-13 - 
-14 - 
-15 - ✅
-17 - ✅
+
+![[Pasted image 20260720223239.png]]
+
+Ответ:
+```
+	generate (exp(1, l1))
+	seize h1
+	advance t1
+	release h1
+
+mc1 seize c1
+	advance tc1
+	release c1
+	transfer 1-ps, mc1
+	transfer ,uz2
+
+	generate (exp(1, l2))
+	seize h1
+	advance t1
+	release h1
+	
+mc2 seize c2
+	advance tc2
+	release c2
+	transfer 1-ps, mc2
+
+uz2 seize h2
+	advance th2
+	release h2
+	terminate
+
+```
+
+![[Pasted image 20260720231652.png]]
+
+Ответ:
+```
+	generate (exp(1, l1))
+	seize h1
+	advance t1
+	release h1
+
+mc1 seize c1
+	advance tc1
+	release c1
+	transfer 1-ps, end
+	transfer ,uz2
+
+	generate (exp(1, l2))
+	seize h1
+	advance t1
+	release h1
+	
+mc2 seize c2
+	advance tc2
+	release c2
+	transfer 1-ps, end
+
+uz2 seize h2
+	advance th2
+	release h2
+end	terminate
+```
+
+![[Pasted image 20260720232730.png]]
+
+Ответ:
+```
+	generate (exp(1, l1))
+	transfer ,uz1
+	generate (exp(1, l2))
+
+uz1 seize h1
+	advance t1
+	release h1
+	transfer pc, mc2
+
+mc1 seize c1
+	advance tc1
+	release c1
+	transfer 1-ps, mc1
+	transfer ,uz2
+
+mc2 seize c2
+	advance tc2
+	release c2
+	transfer 1-ps, mc2
+
+uz2 seize h2
+	advance th2
+	release h2
+	terminate
+```
+
+![[Pasted image 20260720233352.png]]
+
+Ответ:
+```
+	generate (exp(1, l1))
+	transfer ,uz1
+	generate (exp(1, l2))
+
+uz1 seize h1
+	advance t1
+	release h1
+	transfer pc, mc2
+
+mc1 seize c1
+	advance tc1
+	release c1
+	transfer 1-ps, end
+	transfer ,uz2
+
+mc2 seize c2
+	advance tc2
+	release c2
+	transfer 1-ps, end
+
+uz2 seize h2
+	advance th2
+	release h2
+end	terminate
+```
